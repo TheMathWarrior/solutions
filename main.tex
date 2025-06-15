@@ -1,0 +1,152 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy,hints]{evan}
+
+\begin{document}
+\title{Chapter 7 Reference}
+\date{\today}
+\maketitle
+
+\section{Basic Theorems}
+\begin{theorem}
+  [Barycentric Area Formula]
+  Let $P_1$, $P_2$, $P_3$ be points with barycentric coordinates $P_i = (x_i, y_i, z_i)$ for $i = 1, 2, 3$. Then the signed area of $\triangle P_1P_2P_3$ is given by the determinant
+
+  \[\frac{\left[P_1P_2P_3\right]}{\left[ABC\right]}=
+    \left\lvert
+    \begin{array}{ccc}
+      x_1 & y_1 & z_1 \\
+      x_2 & y_2 & z_2 \\
+      x_3 & y_3 & z_3 \\
+    \end{array}
+    \right\rvert.
+  \]
+
+\end{theorem}
+
+\begin{theorem}
+  [Equation of a Line]
+  The equation of a line takes the form $ux + vy + wz = 0$ where $u$, $v$, $w$ are real numbers. The $u$, $v$, and $w$ are unique up to scaling.
+\end{theorem}
+
+\begin{theorem}
+  [Barycentric Cevian]
+  Let $P = (x_1 : y_1 : z_1)$ be any point other than $A$. Then the points on line $AP$ (other than $A$) can be parametrized by
+  \[(t:y_1:z_1)\]
+
+  \noindent
+  where $t\in \RR$ and $t+y_1+z_1 \neq 0$.
+
+\end{theorem}
+
+Coordinates of common points:
+\begin{align*}
+  G &= (1:1:1)\\
+  I &= (a:b:c)\\
+  I_A &= (-a:b:c)\\
+  K &= (a^2:b^2:c^2)\\
+  H &= (\tan A:\tan B:\tan C) = (a^2S_A:b^2S_B:c^2S_C)\\
+  O &= (\sin 2A:\sin 2B:\sin 2C)=(S_BS_C:S_CS_A:S_AS_B)\\
+\end{align*}
+
+\pagebreak
+\section{Collinearity and Concurrence}
+\begin{theorem}
+  [Collinearity]
+  Consider points $P_1$, $P_2$, $P_3$ with $P_i = (x_i : y_i : z_i)$ for $i = 1, 2, 3$. The three points are collinear if and only if
+  \[
+    \left\lvert
+    \begin{array}{ccc}
+      x_1 & y_1 & z_1 \\
+      x_2 & y_2 & z_2 \\
+      x_3 & y_3 & z_3 \\
+    \end{array}
+    \right\rvert.
+  \]
+\end{theorem}
+
+\begin{proposition}
+  The line through two points $P = (x_1 : y_1 : z_1)$ and $Q = (x_2 : y_2 : z_2)$ is given precisely by the formula
+    \[0 =
+    \left\lvert
+    \begin{array}{ccc}
+      x & y & z \\
+      x_1 & y_1 & z_1 \\
+      x_2 & y_2 & z_2 \\
+    \end{array}
+    \right\rvert.
+  \]
+\end{proposition}
+
+\begin{theorem}
+  [Concurrence]
+  Consider three lines
+  \[\ell_i : u_ix + v_iy + w_iz = 0\]
+  for i = 1, 2, 3. They are concurrent or all parallel if and only if
+    \[0=
+    \left\lvert
+    \begin{array}{ccc}
+      u_1 & v_1 & w_1 \\
+      u_2 & v_2 & w_2 \\
+      u_3 & v_3 & w_3 \\
+    \end{array}
+    \right\rvert.
+  \]
+\end{theorem}
+
+\section{Displacement Vectors}
+\begin{theorem}
+  [Distance Formula]
+  Let $P$ and $Q$ be two arbitrary points and consider a displacement vector $\ray{PQ} = (x, y, z)$. Then the distance from $P$ to $Q$ is given by
+  \[\abs{PQ}^2=-a^2yz-b^2zx-c^2xy.\]
+\end{theorem}
+
+\begin{theorem}
+  [Barycentric Circle]
+  The general equation of a circle is
+  \[-a^2yz-b^2zx-c^2xy+(ux+vy+wz)(x+y+z)=0\]
+  for reals $u$, $v$, $w$.
+\end{theorem}
+
+\begin{theorem}
+  [Barycentric Perpendiculars]
+  Let $\ray{MN} = (x_1, y_1, z_1)$ and $\ray{PQ} = 
+(x_2, y_2, z_2)$ be displacement vectors. Then $MN \perp PQ$ if and only if
+\[0 = a^2(z_1y_2 + y_1z_2) + b^2(x_1z_2 + z_1x_2) + c^2(y_1x_2 + x_1y_2).\]
+\end{theorem}
+
+\section{Conway's Notations}
+\begin{proposition}
+  [Conway Identities]
+  Let $S$ denote twice the area of triangle $ABC$, then
+  \begin{align*}
+    S^2 &= S_{AB} + S_{BC} + S_{CA}\\
+        &= S_{BC} + a^2S_A\\
+        &= \frac{1}{2}(a^2S_A + b^2S_B + c^2S_C)\\
+        &= (bc)^2 - S_A^2.
+  \end{align*}
+  In particular,
+  \[a^2S_A + b^2S_B - c^2S_C = 2S_{AB}.\]
+\end{proposition}
+\section{Power of a Point}
+\begin{lemma}
+  [Barycentric Power of a Point]
+  \[\Pow_\omega(P) = - a^2yz - b^2zx - c^2xy + (x + y + z)(ux + vy + wz).\]
+\end{lemma}
+
+\begin{lemma}
+  [Barycentric Radical Axis]
+  Suppose two non-concentric circles are given by the equations
+  \begin{align*}
+    - a^2yz - b^2zx - c^2xy + (x + y + z)(u_1x + v_1y + w_1z) &= 0\\
+    - a^2yz - b^2zx - c^2xy + (x + y + z)(u_2x + v_2y + w_2z) &= 0.
+  \end{align*}
+  Then their radical axis is given by
+  \[(u_1 - u_2)x + (v_1 - v_2)y + (w_1 - w_2)z = 0.\]
+\end{lemma}
+\begin{lemma}
+  The tangent to ($ABC$) at $A$ is given by
+  \[b^2z + c^2y = 0.\]
+\end{lemma}
+
+
+\end{document}
