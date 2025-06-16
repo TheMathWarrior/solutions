@@ -1,9 +1,6 @@
 \documentclass[11pt]{scrartcl}
-\usepackage[sexy, hints]{evan} %Evan Chen's custom style file
-
-%--------------------------------------------------------%
-%----------Reference sheet for Evan Chen's EGMO----------%
-%--------------------------------------------------------%
+\usepackage[sexy, hints]{evan}
+\usepackage{asymptote}
 
 \begin{document}
 \title{Chapter 7 Reference}
@@ -48,8 +45,12 @@ Coordinates of common points:
   I &= (a:b:c)\\
   I_A &= (-a:b:c)\\
   K &= (a^2:b^2:c^2)\\
-  H &= (\tan A:\tan B:\tan C) = (a^2S_A:b^2S_B:c^2S_C)\\
-  O &= (\sin 2A:\sin 2B:\sin 2C)=(S_BS_C:S_CS_A:S_AS_B)\\
+  H &= (\tan A:\tan B:\tan C) = (S_BS_C:S_CS_A:S_AS_B)\\
+  O &= (\sin 2A:\sin 2B:\sin 2C) = (a^2S_A:b^2S_B:c^2S_C)\\
+  P_A &= (a^2 : 2S_A : 2S_A)\\
+  Q_A &= (2S_A : b^2 : c^2)\\
+  G_e &= ((s-b)(s-c) : (s-c)(s-a) : (s-a)(s-b))\\
+  N &= ((s-a) : (s-b) : (s-c))
 \end{align*}
 
 \pagebreak
@@ -57,7 +58,7 @@ Coordinates of common points:
 \begin{theorem}
   [Collinearity]
   Consider points $P_1$, $P_2$, $P_3$ with $P_i = (x_i : y_i : z_i)$ for $i = 1, 2, 3$. The three points are collinear if and only if
-  \[
+  \[0 =
     \left\lvert
     \begin{array}{ccc}
       x_1 & y_1 & z_1 \\
@@ -150,7 +151,139 @@ Coordinates of common points:
 \begin{lemma}
   The tangent to ($ABC$) at $A$ is given by
   \[b^2z + c^2y = 0.\]
+  center
 \end{lemma}
 
+\begin{figure}[ht]
+\centering
 
+  \begin{asy}
+/*
+Converted from GeoGebra by User:Azjps using Evan's magic cleaner
+https://github.com/vEnhance/dotfiles/blob/main/py-scripts/export-ggb-clean-asy.py
+*/
+pair A = (-0.47070,0.88228);
+pair B = (-0.99083,-0.13508);
+pair C = (0.98897,-0.14810);
+pair Q = (-0.62342,-0.13750);
+pair P = (-0.33141,-0.13942);
+pair N = (-0.77614,-1.15729);
+pair M = (-0.19211,-1.16113);
+pair X = (-0.37405,-0.92740);
+
+import graph;
+size(8cm);
+pen qqwuqq = rgb(0.,0.39215,0.);
+draw(arc(C,0.08681,144.78165,179.62332)--C--cycle, linewidth(0.6) + qqwuqq);
+draw(arc(A,0.08681 * 1.5,-117.07793,-82.23626)--A--cycle, linewidth(0.6) + qqwuqq);
+draw(arc(B,0.08681,-0.37667,62.92206)--B--cycle, linewidth(0.6) + red);
+draw(arc(A,0.08681,-98.51708,-35.21834)--A--cycle, linewidth(0.6) + red);
+draw(circle((0.,0.), 1.), linewidth(0.6));
+draw(A--B, linewidth(0.6));
+draw(B--C, linewidth(0.6));
+draw(C--A, linewidth(0.6));
+draw(B--M, linewidth(0.6));
+draw(C--N, linewidth(0.6));
+draw(A--N, linewidth(0.6));
+draw(A--M, linewidth(0.6));
+
+dot("$A$", A, dir(64));
+dot("$B$", B, dir(160));
+dot("$C$", C, dir(20));
+dot("$Q$", Q, dir(46));
+dot("$P$", P, dir(65));
+dot("$N$", N, dir(153));
+dot("$M$", M, dir(46));
+dot("$X$", X, dir(89));
+\end{asy}
+\caption{IMO 2014/4}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{asy}
+/*
+Converted from GeoGebra by User:Azjps using Evan's magic cleaner
+https://github.com/vEnhance/dotfiles/blob/main/py-scripts/export-ggb-clean-asy.py
+*/
+pair A = (-0.38517,0.92284);
+pair B = (-0.84127,-0.54061);
+pair C = (0.84462,-0.53536);
+pair D = (-0.42158,-0.53930);
+pair F = (0.12314,0.32010);
+pair E = (-0.70393,-0.09994);
+pair M = (0.00167,-0.53798);
+pair P_A = (-0.11869,-0.08345);
+
+import graph;
+size(10cm);
+draw(A--B, linewidth(0.6));
+draw(B--C, linewidth(0.6));
+draw(C--A, linewidth(0.6));
+draw(circle((-0.63372,0.19750), 0.76674), linewidth(0.6) + dotted);
+draw(circle((0.20929,0.17651), 0.95415), linewidth(0.6) + dotted);
+draw(circle((-0.42443,0.37401), 0.55023), linewidth(0.6));
+draw(A--M, linewidth(0.6) + red);
+
+dot("$A$", A, dir(62));
+dot("$B$", B, dir(64));
+dot("$C$", C, dir(62));
+dot("$D$", D, dir(65));
+dot("$F$", F, dir(28));
+dot("$E$", E, dir(27));
+dot("$M$", M, dir(64));
+dot("$P_A$", P_A, dir(65));
+\end{asy}
+\caption{ELMO Shortlist 2013}
+\end{figure}
+
+\begin{center}
+\begin{asy}
+/*
+Converted from GeoGebra by User:Azjps using Evan's magic cleaner
+https://github.com/vEnhance/dotfiles/blob/main/py-scripts/export-ggb-clean-asy.py
+*/
+pair A = (-0.65711,0.75379);
+pair B = (-0.85811,-0.51346);
+pair C = (0.84462,-0.53536);
+pair D = (-0.43423,-0.51891);
+pair F = (0.00966,0.18140);
+pair E = (-0.76998,0.04218);
+pair M = (-0.00674,-0.52441);
+pair H = (-0.67060,-0.29503);
+pair Op = (-0.01348,-1.04882);
+pair Hp = (0.64362,-1.80261);
+pair P_A = (-0.23597,-0.07389);
+pair O = (0.,0.);
+
+import graph;
+size(12cm);
+draw(circle(O, 1.), linewidth(0.6));
+draw(A--B, linewidth(0.6));
+draw(B--C, linewidth(0.6));
+draw(C--A, linewidth(0.6));
+draw(circle((-0.63823,0.10122), 0.65283), linewidth(0.6) + dotted);
+draw(circle((0.21519,0.25068), 1.00699), linewidth(0.6) + dotted);
+draw(circle((-0.42303,0.35191), 0.46508), linewidth(0.6));
+draw(circle(Op, 1.), linewidth(0.6));
+draw(A--Hp, linewidth(0.6) + red);
+draw(H--P_A, linewidth(0.6));
+draw(Hp--H, linewidth(0.6));
+draw(A--H, linewidth(0.6));
+draw(O--Op, linewidth(0.6));
+
+dot("$A$", A, dir(61));
+dot("$B$", B, dir(63));
+dot("$C$", C, dir(62));
+dot("$D$", D, dir(62));
+dot("$F$", F, dir(27));
+dot("$E$", E, dir(26));
+dot("$M$", M, dir(67));
+dot("$H$", H, dir(64));
+dot("$O'$", Op, dir(63));
+dot("$H'$", Hp, dir(65));
+dot("$P_A$", P_A, dir(62));
+dot("$O$", O, dir(65));
+\end{asy}
+\end{center}
 \end{document}
